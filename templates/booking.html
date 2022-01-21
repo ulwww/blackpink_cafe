@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/style_booking.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="div-header-top">
+    <div class="div-header-top-inner">
+        <a class="a-header" href="/#about">О нас</a>
+        <a class="a-header" href="/#menu">Меню</a>
+        <a class="a-header" href="/#menu">Доставка</a>
+        <a class="a-header" href="/#gallery">Галерея</a>
+        <a class="a-header" href="/booking/">Бронирование</a>
+        <a class="a-header" href="/#contacts">Контакты</a>
+    </div>
+</div>
+
+<div class="div-booking">
+    <form id="form-booking" class="form-booking-inner">
+        <div class="div-booking-header">
+            <p align="center">БРОНИРОВАНИЕ</p>
+        </div>
+        <div class="div-booking-name">
+            <label class="label-left">ФИО:*</label>
+            <input class="input-text" type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+        </div>
+        <div class="div-booking-phone">
+            <label class="label-left">ТЕЛЕФОН:*</label>
+            <input class="input-text" type="text" id="phone" name="phone" placeholder="+7(___)___ __ __" required>
+        </div>
+        <div class="div-booking-date">
+            <label class="label-left">ДАТА:*</label>
+            <input class="input-date" type="date" id="date" name="date" required>
+        </div>
+        <div class="div-booking-time">
+            <label class="label-left">ВРЕМЯ:*</label>
+            <div class="div-select-time">
+                <select class="select-time" id="time" name="time" required>
+                    <option selected disabled>Выберите время</option>
+                    <option>11:00</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+                    <option>18:00</option>
+                    <option>19:00</option>
+                    <option>20:00</option>
+                    <option>21:00</option>
+                </select>
+            </div>
+        </div>
+        <div class="div-booking-tables">
+            <div class="div-img-tables">
+                <img class="img-tables" src="{{ url_for('static', filename='images/blackpink_heart.png') }}" alt="">
+            </div>
+            <div class="div-select-tables">
+                <select class="select-tables" id="table" name="table" required>
+                    <option selected disabled>Выберите стол</option>
+                    <option>Стол 1</option>
+                    <option>Стол 2</option>
+                    <option>Стол 3</option>
+                    <option>Стол 4</option>
+                    <option>Стол 5</option>
+                </select>
+            </div>
+        </div>
+        <div class="div-booking-comment">
+            <textarea class="textarea-comment" id="comment" name="comment" cols="40" rows="5" placeholder="Комментарий (при необходимости)"></textarea>
+        </div>
+    </form>
+    <div class="div-booking-button-submit">
+        <button id="button-submit" class="button-submit" onclick="book()">ЗАБРОНИРОВАТЬ</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/check_booking.js') }}"></script>
+{% endblock %}

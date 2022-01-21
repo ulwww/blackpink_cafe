@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/style_main.css') }}">
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/style_slider.css') }}">
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="div-header">
+    <div class="div-header-top">
+        <div class="div-header-top-inner">
+            <a class="a-header" href="/#about">О нас</a>
+            <a class="a-header" href="/#menu">Меню</a>
+            <a class="a-header" href="/#menu">Доставка</a>
+            <a class="a-header" href="/#gallery">Галерея</a>
+            <a class="a-header" href="/booking/">Бронирование</a>
+            <a class="a-header" href="/#contacts">Контакты</a>
+        </div>
+    </div>
+
+    <div class="div-header-logo-inner">
+        <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+    </div>
+</div>
+
+<div class="div-about" id="about">
+    <div class="div-about-inner">
+        <p class="p-about-header">О нас</p>
+        <p class="p-about">Вся суть в названии кафе, сочетании
+            черного и розового цветов<br/>
+            как двух разных начал. Черный — символ силы, независимости и
+            таланта,<br/>
+            розовый — символ всего милого, доброго и красивого.<br/>
+            Этот дуализм есть во всем в наше кафе Blackpink: от визуальной
+            эстетики<br/>
+            и музыки до блюд по настроению на черные и розовые.</p>
+        <p class="p-about">Мы хотим показать, что черный тоже
+            может быть сладким и вкусным,<br/>
+            а розовый цвет не только для принцесс.<br/>
+            А их сочетания именно то, чего не хватает в повседневной жизни.</p>
+    </div>
+</div>
+
+<div class="div-menu-top" id="menu">
+    <div class="div-menu-top-inner">
+        <p class="p-menu-top">МЕНЮ и ДОСТАВКА</p>
+    </div>
+</div>
+
+<div class="div-menu">
+    <div class="div-menu-line">
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_1.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">Макаруны</p>
+        </div>
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_2.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">Капкейки</p>
+        </div>
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_3.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">Эклеры</p>
+        </div>
+    </div>
+    <div class="div-menu-line">
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_4.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">Розовая Вакханалия</p>
+        </div>
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_5.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">На Темной Стороне</p>
+        </div>
+        <div class="div-menu-item">
+            <img src="{{ url_for('static', filename='images/menu_6.png') }}" class="img-menu-item" alt="">
+            <p class="p-menu-item">Яркий Бум</p>
+        </div>
+    </div>
+</div>
+
+<div class="div-gallery" id="gallery">
+    <section id="slider_bl" class="slider_bl">
+        <div class="wrapper">
+            <input checked type=radio name="slider" id="slide1"/>
+            <input type=radio name="slider" id="slide2"/>
+            <input type=radio name="slider" id="slide3"/>
+            <input type=radio name="slider" id="slide4"/>
+            <div class="slider-wrapper">
+                <div class=inner>
+                    <article>
+                        <img src="{{ url_for('static', filename='images/image_gallery_1.png') }}" alt="">
+                    </article>
+                    <article>
+                        <img src="{{ url_for('static', filename='images/image_gallery_2.png') }}" alt="">
+                    </article>
+                    <article>
+                        <img src="{{ url_for('static', filename='images/image_gallery_3.png') }}" alt="">
+                    </article>
+                    <article>
+                        <img src="{{ url_for('static', filename='images/image_gallery_4.png') }}" alt="">
+                    </article>
+                </div>
+            </div>
+            <div class="slider-prev-next-control">
+                <label for=slide1></label>
+                <label for=slide2></label>
+                <label for=slide3></label>
+                <label for=slide4></label>
+            </div>
+            <div class="slider-dot-control">
+                <label for=slide1></label>
+                <label for=slide2></label>
+                <label for=slide3></label>
+                <label for=slide4></label>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="div-contacts" id="contacts">
+    <p class="p-contacts-header">СВЯЗАТЬСЯ С НАМИ</p>
+    <div class="div-contacts-content">
+        <div class="div-contacts-values">
+            <div class="div-contacts-value">
+                <p class="p-contacts-value-header">АДРЕС:</p>
+                <p class="p-contacts-value">г. Екатеринбург<br/>ул. Котиков 7</p>
+            </div>
+            <div class="div-contacts-value">
+                <p class="p-contacts-value-header">ТЕЛЕФОНЫ:</p>
+                <p class="p-contacts-value">+7 (977) 777 77 77<br/>+7 (955) 555 55 55</p>
+            </div>
+            <div class="div-contacts-value">
+                <p class="p-contacts-value-header">РЕЖИМ РАБОТЫ:</p>
+                <p class="p-contacts-value">пн-вс с 11:00 до 22:00</p>
+            </div>
+            <div class="div-contacts-value">
+                <p class="p-contacts-value-header">
+                    <a class="a-contacts-value" href="/booking/">БРОНИРОВАНИЕ</a>
+                </p>
+            </div>
+
+        </div>
+        <img class="img-contacts-logo" src="{{ url_for('static', filename='images/blackpink_heart.png') }}" alt="">
+    </div>
+</div>
+{% endblock %}

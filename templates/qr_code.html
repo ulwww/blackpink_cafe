@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/style_booking.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="div-header-top">
+    <div class="div-header-top-inner">
+        <a class="a-header" href="/#about">О нас</a>
+        <a class="a-header" href="/#menu">Меню</a>
+        <a class="a-header" href="/#menu">Доставка</a>
+        <a class="a-header" href="/#gallery">Галерея</a>
+        <a class="a-header" href="/booking/">Бронирование</a>
+        <a class="a-header" href="/#contacts">Контакты</a>
+    </div>
+</div>
+
+<div class="div-qr-code">
+    <p class="p-qr-code-header">Ваш qr-код, подтверждающий бронирование.<br>Пожалуйста, сохраните его, чтобы потом показать в кафе.</p>
+    <img src="/qr-code/{{ uuid }}" alt="">
+</div>
+
+<script src="{{ url_for('static', filename='js/check_booking.js') }}"></script>
+{% endblock %}
